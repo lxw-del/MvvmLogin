@@ -1,114 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <data>
-        <variable
-            name="viewModel"
-            type="com.example.mvvmlogin.viewmodel.LoginViewModel" />
-
-        <import type="android.view.View"/>
-        <import type="com.example.mvvmlogin.model.LoginState"/>
-    </data>
-
-    <androidx.core.widget.NestedScrollView
+    <TextView
+        android:id="@+id/Main_text"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/loginbkg"
-            android:gravity="center"
-            android:orientation="vertical"
-            >
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="50dp"
-                android:background="@drawable/custom_edittext"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="20dp"
-                >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:focusable="false"
-                    android:orientation="vertical"
-                    android:padding="24dp">
-
-                    <TextView
-                        android:id="@+id/loginText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/login"
-                        android:textAlignment="center"
-                        android:textColor="@color/purple_200"
-                        android:textSize="36sp"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/username"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="40dp"
-                        android:afterTextChanged="@{(text)->viewModel.onUserTextChanged(text)}"
-                        android:background="@drawable/custom_edittext"
-                        android:drawableStart="@drawable/user"
-                        android:drawablePadding="8dp"
-                        android:hint="@string/username"
-                        android:padding="8dp"
-                        android:textColor="@color/black"
-                        android:textColorHighlight="@color/purple_500" />
-
-                    <EditText
-                        android:id="@+id/password"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="20dp"
-                        android:afterTextChanged="@{(text) -> viewModel.onPasswordTextChanged(text)}"
-                        android:background="@drawable/custom_edittext"
-                        android:drawableStart="@drawable/password"
-                        android:drawablePadding="10dp"
-                        android:hint="@string/password"
-                        android:padding="8dp"
-                        android:textColor="@color/black"
-                        android:textColorHighlight="@color/purple_500"
-                        />
-                    <Button
-                        android:id="@+id/loginButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="30dp"
-                        android:layout_gravity="end"
-                        android:enabled="@{viewModel.loginStateLiveData.loginState == LoginState.STA_VALID}"
-                        android:onClick="@{()->viewModel.loginOnClick()}"
-                        android:text="@string/login"
-                        android:textSize="18sp"
-                        android:background="@drawable/custom_button"
-                        />
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/signupText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:padding="8dp"
-                android:text="@string/sign_up"
-                android:textAlignment="center"
-                android:textColor="@color/purple_200"
-                android:textSize="14sp"
-                />
-
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-</layout>
+        android:textSize="30sp"
+        android:text="@string/maintext"
+        android:gravity="center"
+        android:textColor="@color/purple_200"
+        android:background="@drawable/custom_edittext"
+        />
+</RelativeLayout>

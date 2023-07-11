@@ -4,4 +4,5 @@
     <string name="login">Login</string>
     <string name="password">password</string>
     <string name="sign_up">Not yet register? SignUp Now</string>
+    <string name="maintext">主页</string>
 </resources>
