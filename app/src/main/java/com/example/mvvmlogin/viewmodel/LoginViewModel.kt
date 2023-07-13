@@ -62,7 +62,7 @@ class LoginViewModel(private val loginRepository: LoginRepository):ViewModel() {
      * 判断信息是否合法
      * 使用postValue 因为setValue只能在主线程中执行
      */
-    private fun loginIsValid(){
+    fun loginIsValid(){
         viewModelScope.launch{
             withContext(Dispatchers.Default){
                 if (loginRepository.user.isValid()){

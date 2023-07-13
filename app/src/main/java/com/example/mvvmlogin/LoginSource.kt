@@ -18,7 +18,7 @@ class LoginSource {
          if (count%2==0){
              val userInfo = UserInfo(username,"111",java.util.UUID.randomUUID().toString())
 
-             val result = LoginResult(userInfo,"")
+             val result = LoginResult(userInfo,null)
              Result.success(result)
          }else{
              val result = LoginResult(null,"登录失败")
